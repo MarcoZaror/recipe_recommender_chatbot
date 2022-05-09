@@ -1,6 +1,5 @@
-
-from sacremoses import MosesTokenizer
 import nltk.corpus.stopwords
+from sacremoses import MosesTokenizer
 
 
 class Tokenizer:
@@ -14,7 +13,9 @@ class Tokenizer:
 
     def clean_text(self, text: str) -> str:
         text_lower = text.lower()
-        text_lower = " ".join([word for word in text_lower.split() if word not in self.stopwords])
+        text_lower = " ".join(
+            [word for word in text_lower.split() if word not in self.stopwords]
+        )
         return text_lower
 
     def tokenize(self, text: str, process: bool = True) -> str:
