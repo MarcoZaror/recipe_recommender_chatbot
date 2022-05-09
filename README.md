@@ -1,18 +1,15 @@
-# Files
+## Objective
+This project is focused on creating a basic chatbot that retrieve information about the user and what type of food they want to cook, and recommend recipes given that information.
 
-### The objective of this project is to create a bot that learn about someone (tastes, alergies, etc.) and recommend recipes that he or she would like
+To chat with the bot, use the recommend_recipe.py script. However, firstly it is needed to run the web_scrapping.py script in order to gather and structure all the necessary information.
 
-### main_scrapping.py
-Objective: Scrapp all the recipes, get their info and store index of recipes, word2id, id2word, recipe embeddings and word embeddings
+## Some details
+ - query embeddings are obtained averaging all word emebddings from the query
+ - recipe embeddings are obtained concatenating the text from category, title and country of the recipe and averaging word embeddings from all that text
+ - The similarity between a user query and the recipes is done using cosine similarity
 
-### main.py
-Objective: main file, contains the bot interactions
 
-### Data.py
-Objective: Class to store the set of recipes and their features
+## Future work
+ - Try different approaches to generate embeddings. Specifically, obtaining sentence embeddings directly rather than averaging word embeddings looks like the most promising approach
+ - Gather recipes from other websites
 
-### recipebot.py
-Objective: Class representing the bot
-
-### Scrapping.py
-Objective: Class focused on performing the scrapping
